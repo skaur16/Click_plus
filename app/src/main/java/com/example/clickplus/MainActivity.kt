@@ -36,7 +36,13 @@ class MainActivity : ComponentActivity() {
                     )
                     {
                         Text(text = stateView.count.value.toString())
-                        Button(onClick = { /*TODO*/ }) {
+                        Button(onClick = {
+
+                            stateView.count(stateView.count.value)
+
+
+
+                        }) {
                             Text(text = "Click me!")
                         }
                     }

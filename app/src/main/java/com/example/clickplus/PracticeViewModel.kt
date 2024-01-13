@@ -6,8 +6,18 @@ import androidx.lifecycle.ViewModel
 class PracticeViewModel : ViewModel(){
     val count = mutableStateOf(0)
 
-    fun count(){
+    val fireBase = FireBase()
 
+
+
+
+    fun count(count:Int){
+
+        fireBase.counter(count)
     }
 
+
+
 }
+
+
