@@ -3,6 +3,7 @@ package com.example.clickplus
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,6 +21,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+
+            val stateView : PracticeViewModel by viewModels()
+
             ClickPlusTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
@@ -31,7 +35,7 @@ class MainActivity : ComponentActivity() {
                         verticalArrangement = Arrangement.Center
                     )
                     {
-                        Text(text = "0")
+                        Text(text = stateView.count.value.toString())
                         Button(onClick = { /*TODO*/ }) {
                             Text(text = "Click me!")
                         }
