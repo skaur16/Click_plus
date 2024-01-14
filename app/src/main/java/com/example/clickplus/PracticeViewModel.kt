@@ -11,17 +11,16 @@ class PracticeViewModel : ViewModel(){
 
     val fireBase = FireBase()
 
-    fun add(stateView:PracticeViewModel): Int {
+    fun add(stateView:PracticeViewModel) {
         stateView.val_count.value = stateView.val_count.value.copy(
             count = stateView.val_count.value.count + 1
         )
-        return stateView.val_count.value.count
     }
 
-    fun count(count:Int){
-        Log.d("myTag", "ViewModel")
-        var c = add(stateView = PracticeViewModel())
-        fireBase.counter(c)
+    fun count(value:Value){
+        //var count = value.count
+        Log.d("ViewModel, value of count=", value.count.toString())
+        fireBase.counter(value.count)
     }
 
 

@@ -1,6 +1,7 @@
 package com.example.clickplus
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -37,10 +38,19 @@ class MainActivity : ComponentActivity() {
                     {
                         Text(text = stateView.val_count.value.count.toString())
                         Button(onClick = {
+
+                            Log.d("Before add iin main activity",stateView.val_count.value.count.toString())
+
                             stateView.val_count.value = stateView.val_count.value.copy(
                                 count = stateView.val_count.value.count + 1)
 
-                            stateView.count(stateView.val_count.value.count)
+                            Log.d("After add iin main activity",stateView.val_count.value.count.toString())
+
+                            stateView.count (
+                                stateView.val_count.value.copy(
+                                    stateView.val_count.value.count
+                                )
+                                )
 
 
 

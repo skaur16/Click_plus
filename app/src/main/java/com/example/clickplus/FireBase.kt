@@ -12,6 +12,8 @@ class FireBase {
    fun counter(count:Int) {
 
        Log.d("myTag", "This is FireBase")
+       Log.d("Value of count", count.toString())
+
 
        val x = hashMapOf(
            "value" to count
