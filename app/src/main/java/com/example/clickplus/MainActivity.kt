@@ -35,10 +35,12 @@ class MainActivity : ComponentActivity() {
                         verticalArrangement = Arrangement.Center
                     )
                     {
-                        Text(text = stateView.count.value.toString())
+                        Text(text = stateView.val_count.value.count.toString())
                         Button(onClick = {
+                            stateView.val_count.value = stateView.val_count.value.copy(
+                                count = stateView.val_count.value.count + 1)
 
-                            stateView.count(stateView.count.value)
+                            stateView.count(stateView.val_count.value.count)
 
 
 
